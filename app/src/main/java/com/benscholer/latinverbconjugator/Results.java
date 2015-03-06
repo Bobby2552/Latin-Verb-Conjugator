@@ -22,10 +22,10 @@ public class Results extends ActionBarActivity {
 
 		//Create a CardHeader
 		CardHeader header = new CardHeader(this);
+		header.setTitle("Test Card");
 
 		//Add Header to card
 		card.addCardHeader(header);
-
 		//Enable shadow
 		card.setShadow(true);
 

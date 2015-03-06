@@ -22,7 +22,8 @@
 			app:baseColor="#000000"
 			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
-			android:layout_marginTop="20dp"/>
+			android:layout_marginTop="20dp"
+			android:text="cogito"/>
 
 		<com.rengwuxian.materialedittext.MaterialEditText
 			android:layout_width="300sp"
@@ -33,7 +34,8 @@
 			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_below="@+id/first"
-			android:layout_marginTop="20dp"/>
+			android:layout_marginTop="20dp"
+			android:text="cogitare"/>
 
 		<com.rengwuxian.materialedittext.MaterialEditText
 			android:layout_width="300sp"
@@ -44,7 +46,8 @@
 			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_below="@+id/second"
-			android:layout_marginTop="20dp"/>
+			android:layout_marginTop="20dp"
+			android:text="cogitavi"/>
 
 		<com.rengwuxian.materialedittext.MaterialEditText
 			android:layout_width="300sp"
@@ -55,7 +58,8 @@
 			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_below="@+id/third"
-			android:layout_marginTop="20dp"/>
+			android:layout_marginTop="20dp"
+			android:text="cogitatum"/>
 
 		<Button
 			android:layout_width="wrap_content"
