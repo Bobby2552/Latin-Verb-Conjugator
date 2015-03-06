@@ -26,6 +26,9 @@ public class Results extends ActionBarActivity {
 		//Add Header to card
 		card.addCardHeader(header);
 
+		//Enable shadow
+		card.setShadow(true);
+
 		//Set card in the cardView
 		CardViewNative cardView = (CardViewNative) this.findViewById(R.id.carddemo);
 		cardView.setCard(card);
