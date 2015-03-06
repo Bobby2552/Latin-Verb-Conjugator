@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.view.CardViewNative;
+
 
 public class Results extends ActionBarActivity {
 
@@ -12,28 +16,18 @@ public class Results extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_results);
-	}
 
+		//Create a Card
+		Card card = new Card(this);
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_results, menu);
-		return true;
-	}
+		//Create a CardHeader
+		CardHeader header = new CardHeader(this);
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
+		//Add Header to card
+		card.addCardHeader(header);
 
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
+		//Set card in the cardView
+		CardViewNative cardView = (CardViewNative) this.findViewById(R.id.carddemo);
+		cardView.setCard(card);
 	}
 }
