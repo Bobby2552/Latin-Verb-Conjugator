@@ -5,4 +5,9 @@
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
 	<string name="toolbar_title">Latin Conjugation Tool</string>
+	<string name="first_part_hint">1st part</string>
+	<string name="second_part_hint">2nd part</string>
+	<string name="third_part_hint">3rd part</string>
+	<string name="fourth_part_hint">4th part</string>
+	<string name="conjugate_button">conjugate</string>
 </resources>
