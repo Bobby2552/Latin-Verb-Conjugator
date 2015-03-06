@@ -2,14 +2,16 @@ package com.benscholer.latinverbconjugator;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 
-import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardHeader;
+import java.util.ArrayList;
+
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
 
 public class Results extends ActionBarActivity {
 
+	private ArrayList<VerbCard> cards = new ArrayList<>();
 	public CardViewNative cardView;
 
 	@Override
@@ -17,7 +19,12 @@ public class Results extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_results);
 
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setTitle("Verbs");
+
 		cardView = (CardViewNative) this.findViewById(R.id.carddemo);
+		present();
+		populate();
 	}
 
 	public void present() {
@@ -45,15 +52,18 @@ public class Results extends ActionBarActivity {
 			forms[i] += endigns[i];
 		}
 
-		Card card = new Card(this);
+		String conjugations = forms[0] + "\t\t\t\t" + forms[3] + "\n" +
+				forms[1] + "\t\t\t\t" + forms[4] + "\n" +
+				forms[2] + "\t\t\t\t" + forms[5];
 
-		CardHeader header = new CardHeader(this);
-		header.setTitle("Present Active Indicative\n\n" +
-				forms[0] + "\t" + forms[4] + "\n" +
-				forms[1] + "\t" + forms[5] + "\n" +
-				forms[2] + "\t" + forms[6]);
+		VerbCard card = new VerbCard(this, "Present Indicative Active", conjugations);
 
-		card.addCardHeader(header);
-		card.setShadow(true);
+		cards.add(card);
+	}
+
+	public void populate() {
+		for (VerbCard card: cards) {
+			cardView.setCard(card);
+		}
 	}
 }
