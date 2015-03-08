@@ -32,6 +32,7 @@ public class Results extends ActionBarActivity {
 		imperfectSubjunctiveActive();
 
 		perfectIndicativeActive();
+		perfectIndicativePassive();
 
 		pluperfectIndicativeActive();
 		pluperfectSubjunctiveActive();
@@ -251,7 +252,6 @@ public class Results extends ActionBarActivity {
 
 		cards.add(card);
 	}
-
 
 	public void pluperfectIndicativeActive() {
 		String prefix;
