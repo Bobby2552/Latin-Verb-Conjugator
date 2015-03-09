@@ -22,7 +22,7 @@ public class Results extends ActionBarActivity {
 		setContentView(R.layout.activity_results);
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		toolbar.setTitle(Shared.second);
+		toolbar.setTitle(Shared.second + " - " + Shared.type);
 
 		presentIndicativeActive();
 		presentIndicativePassive();
