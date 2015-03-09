@@ -63,12 +63,18 @@ public class Results extends ActionBarActivity {
 			forms[0] = forms[0].replace("are", "");
 		}
 
-		//TODO unt for third conj.
-		//TODO iunt for fourth conj.
-
 		if (Shared.type == 3) {
-			forms[0] = Shared.second;
-			forms[0] = forms[0].replace("ere", "i");
+			for (int i = 0; i < 6; i++) {
+				forms[i] = Shared.second;
+				forms[i] = forms[i].replace("ere", "i");
+			}
+			forms[5] = Shared.second;
+			forms[5] = forms[5].replace("ere", "u");
+		}
+
+		if (Shared.type == 4) {
+			forms[5] = Shared.second;
+			forms[5] = forms[5].replace("ire", "iu");
 		}
 
 		for (int i = 0; i < forms.length; i++) {
