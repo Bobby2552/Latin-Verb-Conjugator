@@ -36,6 +36,7 @@ public class Results extends ActionBarActivity {
 
 		pluperfectIndicativeActive();
 		pluperfectSubjunctiveActive();
+		pluperfectIndicativePassive();
 
 		//TODO add participles
 
@@ -305,6 +306,30 @@ public class Results extends ActionBarActivity {
 				"\t\t" + forms[2] + "\t\t\t\t" + forms[5];
 
 		VerbCard card = new VerbCard(this, "Pluperfect Subjunctive Active", conjugations);
+
+		cards.add(card);
+	}
+
+	public void pluperfectIndicativePassive() {
+		String prefix;
+		prefix = Shared.fourth;
+
+		String[] forms = new String[6];
+		String[] endings = {" eram", " eras", " erat", " eramus", " eratis", " erant"};
+
+		for (int i = 0; i < forms.length; i++) {
+			forms[i] = prefix;
+			forms[i] += endings[i];
+			if (i == 3 || i == 4 || i == 5) {
+				forms[i] = forms[i].replace("um", "a");
+			}
+		}
+
+		String conjugations = "\t\t" + forms[0] + "\t\t\t\t" + forms[3] + "\n" +
+				"\t\t" + forms[1] + "\t\t\t\t" + forms[4] + "\n" +
+				"\t\t" + forms[2] + "\t\t\t\t" + forms[5];
+
+		VerbCard card = new VerbCard(this, "Pluperfect Indicative Passive", conjugations);
 
 		cards.add(card);
 	}
