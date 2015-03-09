@@ -28,8 +28,8 @@ public class Results extends ActionBarActivity {
 		presentIndicativePassive();
 
 		imperfectIndicativeActive();
-		imperfectIndicativePassive();
 		imperfectSubjunctiveActive();
+		imperfectIndicativePassive();
 
 		perfectIndicativeActive();
 		perfectIndicativePassive();
@@ -253,6 +253,9 @@ public class Results extends ActionBarActivity {
 		for (int i = 0; i < forms.length; i++) {
 			forms[i] = prefix;
 			forms[i] += endings[i];
+			if (i == 3 || i == 4 || i == 5) {
+				forms[i] = forms[i].replace("um", "a");
+			}
 		}
 
 		String conjugations = "\t\t" + forms[0] + "\t\t\t\t" + forms[3] + "\n" +
