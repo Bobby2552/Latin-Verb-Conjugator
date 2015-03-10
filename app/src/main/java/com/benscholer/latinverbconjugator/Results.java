@@ -333,5 +333,4 @@ public class Results extends ActionBarActivity {
 
 		cards.add(card);
 	}
-
 }
