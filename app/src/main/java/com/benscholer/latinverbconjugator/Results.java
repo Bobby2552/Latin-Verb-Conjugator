@@ -38,7 +38,8 @@ public class Results extends ActionBarActivity {
 		pluperfectSubjunctiveActive();
 		pluperfectIndicativePassive();
 
-		//TODO add participles
+		presentActiveParticiple();
+		perfectPassiveParticiple();
 
 		CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(this, cards);
 
@@ -330,6 +331,46 @@ public class Results extends ActionBarActivity {
 				"\t\t" + forms[2] + "\t\t\t\t" + forms[5];
 
 		VerbCard card = new VerbCard(this, "Pluperfect Indicative Passive", conjugations);
+
+		cards.add(card);
+	}
+
+	public void perfectPassiveParticiple() {
+		String prefix;
+		prefix = Shared.fourth.replace("us", "");
+		prefix = Shared.fourth.replace("um", "");
+
+		String[] forms = new String[3];
+		String[] endings = {"us", "a", "um"};
+
+		for (int i = 0; i < forms.length; i++) {
+			forms[i] = prefix;
+			forms[i] += endings[i];
+		}
+
+		String conjugations = "\t\t" + forms[0] + ",  " + forms[1] + ",  " + forms[2];
+
+		VerbCard card = new VerbCard(this, "Perfect Passive Participle", conjugations);
+
+		cards.add(card);
+	}
+
+	public void presentActiveParticiple() {
+		String prefix;
+		prefix = Shared.second.replace("ns", "");
+
+		String[] forms = new String[2];
+		String[] endings = {"ns", "ntis"};
+
+		for (int i = 0; i < forms.length; i++) {
+			forms[i] = prefix;
+			if (Shared.type == 4) forms[i] += "e";
+			forms[i] += endings[i];
+		}
+
+		String conjugations = "\t\t" + forms[0] + ",  " + forms[1];
+
+		VerbCard card = new VerbCard(this, "Present Active Participle", conjugations);
 
 		cards.add(card);
 	}
